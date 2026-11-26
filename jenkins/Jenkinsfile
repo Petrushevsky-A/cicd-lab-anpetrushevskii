@@ -17,6 +17,10 @@ pipeline {
         }
         stage('Deploy') {
             when { branch 'main' }
+            steps {
+                echo "Deploying build #${env.BUILD_NUMBER} to staging..."
+                sh 'echo "deploy done"'
+            }
         }
     }
 
